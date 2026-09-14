@@ -17,8 +17,8 @@ to the capabilities a test environment must provide to verify it.
 
 - No proprietary content. Everything generic and invented. No real OEM
   architectures, project names, DBC files or requirements.
-- The DUT communicates ONLY over the CAN bus. Never a direct function
-  call between plant and DUT.
+- The SUT communicates ONLY over the CAN bus. Never a direct function
+  call between plant and SUT.
 - Determinism is a requirement, not a nice-to-have. Fixed-step clock,
   single time base, reproducible traces.
 - No measurement artifacts committed to the repo. CI generates them.
