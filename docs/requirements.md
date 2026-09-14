@@ -43,3 +43,8 @@ approach.
 **Timing**
 No convergence deadline applies. Approach duration is governed by
 the initial gap and the closing speed.
+
+## REQ-SEN-001 — Sensor detection range
+
+The sensor model shall report a valid target object for ranges between
+0.90 m and 250.00 m. Outside this interval no valid object is reported.
