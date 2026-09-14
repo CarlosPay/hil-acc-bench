@@ -17,6 +17,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install kernel CAN modules
+        run: sudo apt-get update && sudo apt-get install -y linux-modules-extra-$(uname -r)
+      
       - name: Set up vcan0
         run: ./scripts/setup-vcan.sh
 
