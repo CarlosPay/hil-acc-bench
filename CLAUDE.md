@@ -25,5 +25,5 @@ to the capabilities a test environment must provide to verify it.
 
 ## Stack
 
-Python, python-can (virtual bus locally, vcan in CI), cantools, pytest,
+Python, python-can (socketcan on vcan0, every environment), cantools, pytest,
 numpy, PyYAML. English only, in code and docs.

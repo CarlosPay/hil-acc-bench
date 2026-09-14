@@ -1,0 +1,28 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: EGO SENSOR ACC
+
+BO_ 256 EGO_STATUS: 4 EGO
+ SG_ EgoSpeed : 0|16@1+ (0.01,0) [0|69.44] "m/s" ACC
+ SG_ Counter : 16|8@1+ (1,0) [0|255] "" ACC
+
+BO_ 272 SENSOR_OBJECT: 7 SENSOR
+ SG_ Range : 0|16@1+ (0.01,0) [0.9|250] "m" ACC
+ SG_ RangeRate : 16|16@1- (0.01,0) [-69.44|69.44] "m/s" ACC
+ SG_ ObjectValid : 32|8@1+ (1,0) [0|1] "" ACC
+ SG_ Counter : 40|8@1+ (1,0) [0|255] "" ACC
+
+BO_ 288 ACC_REQUEST: 5 ACC
+ SG_ AccelRequest : 0|16@1- (0.01,0) [-10|5] "m/s^2" EGO
+ SG_ AccState : 16|8@1+ (1,0) [0|3] "" EGO
+ SG_ Counter : 24|8@1+ (1,0) [0|255] "" EGO
+
+CM_ BO_ 256 "Plant-authored ego vehicle status.";
+CM_ BO_ 272 "Sensor model output. Stage 1: ideal pass-through of true range.";
+CM_ BO_ 288 "SUT-authored ACC acceleration request. Stage 1: fixed stub output, no control law.";
+
+VAL_ 288 AccState 0 "INACTIVE" 1 "ACTIVE" 2 "STANDBY" 3 "FAULT" ;
