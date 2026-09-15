@@ -1,3 +1,7 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+addopts = "-m 'not repeatability'"
+markers = [
+    "repeatability: expensive multi-run repeatability check; not run on every push",
+]
