@@ -41,7 +41,7 @@ def test_walking_skeleton_end_to_end() -> None:
         pacer = FixedStepPacer(STEP_S)
         try:
             for _ in range(int(SIM_DURATION_S / STEP_S)):
-                plant.step(STEP_S)
+                plant.step()
                 pacer.wait_for_next_step()
         finally:
             plant_bus.shutdown()

@@ -27,3 +27,6 @@ to the capabilities a test environment must provide to verify it.
 
 Python, python-can (socketcan on vcan0, every environment), cantools, pytest,
 numpy, PyYAML. English only, in code and docs.
+
+Pytest configuration lives in `pyproject.toml` (`[tool.pytest.ini_options]`)
+only. Do not add a competing `pytest.ini`, `setup.cfg`, or `tox.ini` section.
