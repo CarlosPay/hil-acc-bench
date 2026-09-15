@@ -27,7 +27,9 @@ def new_session_dir(test_case_id: str) -> Path:
     return session_dir
 
 
-def write_manifest(session_dir: Path, test_case_id: str, runs: list[dict]) -> Path:
+def write_manifest(
+    session_dir: Path, test_case_id: str, runs: list[dict], evaluation: dict
+) -> Path:
     manifest = {
         "test_case_id": test_case_id,
         "git_commit_sha": _git_commit_sha(),
@@ -37,6 +39,7 @@ def write_manifest(session_dir: Path, test_case_id: str, runs: list[dict]) -> Pa
             "SENSOR_OBJECT": STEP_S * SENSOR_OBJECT_PERIOD_STEPS,
             "ACC_REQUEST": STEP_S * ACC_REQUEST_PERIOD_STEPS,
         },
+        "evaluation": evaluation,
         "runs": runs,
     }
     manifest_path = session_dir / "manifest.json"

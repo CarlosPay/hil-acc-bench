@@ -15,6 +15,16 @@ EVALUATION_END_S = 20.0
 GAP_TARGET_S = 1.0
 GAP_TOLERANCE_S = 0.15
 
+# Single source for the criteria that produce the verdict. Passed to
+# bench.runs.write_manifest so a plot can shade the same band and window
+# the pass/fail decision was actually made against.
+EVALUATION = {
+    "window_start_s": EVALUATION_START_S,
+    "window_end_s": EVALUATION_END_S,
+    "target_s": GAP_TARGET_S,
+    "tolerance_s": GAP_TOLERANCE_S,
+}
+
 
 @dataclass
 class RunResult:

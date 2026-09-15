@@ -34,7 +34,7 @@ def test_tc_acc_001_repeatability() -> None:
             }
         )
 
-    write_manifest(session_dir, "TC-ACC-001", run_entries)
+    write_manifest(session_dir, "TC-ACC-001", run_entries, tc_acc_001.EVALUATION)
 
     verdicts = {entry["verdict"] for entry in run_entries}
     assert len(verdicts) == 1, f"verdicts were not identical: {run_entries}"
